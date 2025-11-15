@@ -1,0 +1,12 @@
+from sklearn.linear_model import LinearRegression
+
+# Selecting only one feature
+X_rm = df[["RM"]]
+y_price = df["PRICE"]
+
+X_train_rm, X_test_rm, y_train_rm, y_test_rm = train_test_split(
+    X_rm, y_price, test_size=0.2, random_state=42
+)
+
+simple_model = LinearRegression()
+simple_model.fit(X_train_rm, y_train_rm)
