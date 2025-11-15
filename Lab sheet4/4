@@ -1,0 +1,7 @@
+before = df['A'].describe()
+
+clean_df = df[(df['A'] >= Q1 - 1.5*IQR) & (df['A'] <= Q3 + 1.5*IQR)]
+after = clean_df['A'].describe()
+
+print("Before:\n", before)
+print("\nAfter:\n", after)
