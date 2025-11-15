@@ -1,0 +1,8 @@
+plt.figure(figsize=(8, 6))
+plt.scatter(X_test_rm, y_test_rm, label="Actual Prices")
+plt.plot(X_test_rm, y_pred_simple, label="Regression Line")
+plt.xlabel("RM")
+plt.ylabel("Price")
+plt.title("Simple Linear Regression: RM vs Price")
+plt.legend()
+plt.show()
