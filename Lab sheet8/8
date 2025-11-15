@@ -1,0 +1,5 @@
+plt.plot(np.arange(1,14), pca.explained_variance_ratio_, marker='o')
+plt.xlabel("Principal Component")
+plt.ylabel("Explained Variance Ratio")
+plt.title("Scree Plot")
+plt.show()
