@@ -1,0 +1,7 @@
+k_default = KMeans(n_clusters=3, random_state=42)  # default n_init=10 (new sklearn)
+k_10 = KMeans(n_clusters=3, n_init=10, random_state=42)
+k_50 = KMeans(n_clusters=3, n_init=50, random_state=42)
+
+print("Default inertia:", k_default.fit(X).inertia_)
+print("n_init=10 inertia:", k_10.fit(X).inertia_)
+print("n_init=50 inertia:", k_50.fit(X).inertia_)
