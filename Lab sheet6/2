@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+# Linear model
+from sklearn.linear_model import LinearRegression
+lin_model = LinearRegression()
+lin_model.fit(X_train, y_train)
+y_pred_lin = lin_model.predict(X_test)
+
+# Residuals
+res_lin = y_test - y_pred_lin
+res_poly = y_test - y_pred_poly
+
+plt.figure(figsize=(10,5))
+plt.scatter(y_pred_lin, res_lin, label="Linear Residuals")
+plt.scatter(y_pred_poly, res_poly, label="Polynomial Residuals")
+plt.axhline(0, color='black')
+plt.xlabel("Predicted Values")
+plt.ylabel("Residuals")
+plt.legend()
+plt.title("Residual Comparison: Linear vs Polynomial Regression")
+plt.show()
