@@ -1,0 +1,5 @@
+cum_variance = np.cumsum(pca.explained_variance_ratio_)
+print(cum_variance)
+
+n_components_95 = np.argmax(cum_variance >= 0.95) + 1
+print("Components needed for 95% variance:", n_components_95)
