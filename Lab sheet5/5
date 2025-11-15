@@ -1,0 +1,8 @@
+print("Simple Regression Coefficient (RM):", simple_model.coef_)
+print("Simple Regression Intercept:", simple_model.intercept_)
+
+print("\nMultivariate Regression Coefficients:")
+for col, coef in zip(X.columns, multi_model.coef_):
+    print(f"{col}: {coef}")
+
+print("Multivariate Regression Intercept:", multi_model.intercept_)
