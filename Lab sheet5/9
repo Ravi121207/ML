@@ -1,0 +1,10 @@
+import statsmodels.api as sm
+
+# Add constant
+X_sm = sm.add_constant(X)
+
+# Fit model
+model_sm = sm.OLS(y, X_sm).fit()
+
+# Print summary
+print(model_sm.summary())
