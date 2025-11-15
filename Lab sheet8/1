@@ -1,0 +1,29 @@
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
+import matplotlib.pyplot as plt
+
+# Sample dataset
+df = pd.read_csv("customer_data.csv")   # or any dataset
+X = df.iloc[:, :4].values  # use first 4 columns for clustering example
+
+# Unscaled hierarchical clustering
+Z_unscaled = linkage(X, method='ward')
+
+# Scaled data
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+Z_scaled = linkage(X_scaled, method='ward')
+
+# Compare dendrograms
+plt.figure(figsize=(14,5))
+plt.subplot(1,2,1)
+dendrogram(Z_unscaled)
+plt.title("Unscaled Data")
+
+plt.subplot(1,2,2)
+dendrogram(Z_scaled)
+plt.title("Scaled Data")
+plt.show()
