@@ -1,0 +1,2 @@
+scaler = MinMaxScaler()
+df['A_norm'] = scaler.fit_transform(df[['A']])
