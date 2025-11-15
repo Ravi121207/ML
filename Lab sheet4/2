@@ -1,0 +1,3 @@
+df['A_zscore'] = zscore(df['A'])
+outliers = df[df['A_zscore'].abs() > 3]
+print(outliers)
