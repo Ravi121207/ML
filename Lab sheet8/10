@@ -1,0 +1,6 @@
+plt.figure(figsize=(7,5))
+plt.scatter(X_2D[:,0], X_2D[:,1], c=y, cmap='rainbow')
+plt.xlabel("PC1")
+plt.ylabel("PC2")
+plt.title("Wine PCA Visualization (2 Components)")
+plt.show()
