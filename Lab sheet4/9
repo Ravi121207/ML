@@ -1,0 +1,6 @@
+cols = ['A', 'B']
+scaler = StandardScaler()
+df_scaled = df.copy()
+df_scaled[cols] = scaler.fit_transform(df[cols])
+
+print(df_scaled.head())
