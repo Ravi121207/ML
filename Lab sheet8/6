@@ -1,0 +1,13 @@
+from sklearn.datasets import load_wine
+from sklearn.decomposition import PCA
+
+data = load_wine()
+X = data.data
+y = data.target
+
+# Scale first
+X_scaled = StandardScaler().fit_transform(X)
+
+# PCA
+pca = PCA()
+X_pca = pca.fit_transform(X_scaled)
