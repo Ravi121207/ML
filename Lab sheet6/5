@@ -1,0 +1,4 @@
+import numpy as np
+
+rmse_lin = np.sqrt(mse_lin)
+rmse_poly = np.sqrt(mse_poly)
