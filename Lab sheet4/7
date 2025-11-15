@@ -1,0 +1,5 @@
+std_scaler = StandardScaler()
+scaled = std_scaler.fit_transform(df[['A', 'B']])
+
+print("Mean after scaling:", scaled.mean(axis=0))
+print("Std after scaling:", scaled.std(axis=0))
