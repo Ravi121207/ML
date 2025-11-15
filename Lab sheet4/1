@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import zscore
+from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler, PowerTransformer, PolynomialFeatures
+from sklearn.feature_selection import SelectKBest, f_classif
+
+df = pd.DataFrame({
+    'A': np.random.normal(50, 10, 200),
+    'B': np.random.normal(100, 20, 200),
+    'C': np.random.randint(1, 5, 200),
+    'Date': pd.date_range(start='2024-01-01', periods=200, freq='D')
+})
+
+# Introduce some outliers
+df.loc[0, 'A'] = 200
+df.loc[5, 'B'] = 400
+
+plt.figure(figsize=(12,5))
+plt.subplot(1,2,1)
+plt.hist(df['A'], bins=20)
+plt.title("Before Outlier Removal")
+
+Q1 = df['A'].quantile(0.25)
+Q3 = df['A'].quantile(0.75)
+IQR = Q3 - Q1
+clean_A = df[(df['A'] >= Q1 - 1.5*IQR) & (df['A'] <= Q3 + 1.5*IQR)]['A']
+
+plt.subplot(1,2,2)
+plt.hist(clean_A, bins=20)
+plt.title("After Outlier Removal")
+plt.show()
