@@ -1,0 +1,2 @@
+y_pred_simple = simple_model.predict(X_test_rm)
+y_pred_multi = multi_model.predict(X_test)
