@@ -1,0 +1,2 @@
+df['cluster'] = kmeans.fit_predict(X)
+df.head()
