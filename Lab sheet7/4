@@ -1,0 +1,5 @@
+plt.scatter(df.iloc[:, 0], df.iloc[:, 2], c=df['cluster'])
+plt.xlabel("Sepal length (cm)")
+plt.ylabel("Petal length (cm)")
+plt.title("K-Means Clusters")
+plt.show()
