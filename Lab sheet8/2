@@ -1,0 +1,8 @@
+plt.figure(figsize=(10,5))
+dendrogram(Z_scaled, color_threshold=7)
+plt.axhline(y=7, color='red', linestyle='--')
+plt.title("Dendrogram (Truncated at level = 7)")
+plt.show()
+
+cluster_labels = fcluster(Z_scaled, t=7, criterion='distance')
+print(cluster_labels)
