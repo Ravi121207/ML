@@ -1,0 +1,18 @@
+import numpy as np
+
+np.random.seed(42)
+x = np.random.rand(200)
+y = 3*x + np.random.normal(0, 0.1, 200)   # Highly correlated with x
+
+df_corr = pd.DataFrame({"Feature1": x, "Feature2": y})
+
+plt.scatter(df_corr["Feature1"], df_corr["Feature2"])
+plt.title("Highly Correlated Features")
+plt.show()
+
+kmeans_corr = KMeans(n_clusters=3, random_state=42)
+df_corr['cluster'] = kmeans_corr.fit_predict(df_corr)
+
+plt.scatter(df_corr["Feature1"], df_corr["Feature2"], c=df_corr['cluster'])
+plt.title("Clusters on Correlated Features")
+plt.show()
