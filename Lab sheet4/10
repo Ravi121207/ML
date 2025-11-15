@@ -1,0 +1,2 @@
+robust = RobustScaler()
+df['A_robust'] = robust.fit_transform(df[['A']])
