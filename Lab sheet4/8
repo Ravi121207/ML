@@ -1,0 +1,8 @@
+df['A_minmax'] = MinMaxScaler().fit_transform(df[['A']])
+df['A_std'] = StandardScaler().fit_transform(df[['A']])
+
+plt.figure(figsize=(10,4))
+plt.hist(df['A_minmax'], alpha=0.5, label='MinMax')
+plt.hist(df['A_std'], alpha=0.5, label='Standard')
+plt.legend()
+plt.show()
