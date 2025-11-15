@@ -1,0 +1,8 @@
+import numpy as np
+from time import time
+
+X_large = np.random.rand(6000, 5)
+
+start = time()
+Z = linkage(X_large, method='ward')
+print("Time taken:", time() - start)
