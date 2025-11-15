@@ -1,0 +1,13 @@
+inertia_scores = []
+K = range(1, 11)
+
+for k in K:
+    km = KMeans(n_clusters=k, random_state=42)
+    km.fit(X)
+    inertia_scores.append(km.inertia_)
+
+plt.plot(K, inertia_scores, marker='o')
+plt.xlabel("Number of clusters K")
+plt.ylabel("Inertia (Within-Cluster SSE)")
+plt.title("Elbow Method")
+plt.show()
