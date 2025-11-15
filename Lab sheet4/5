@@ -1,0 +1,5 @@
+df['A_log'] = np.log1p(df['A'])
+df['A_sqrt'] = np.sqrt(df['A'])
+
+df[['A', 'A_log', 'A_sqrt']].hist(figsize=(10,4))
+plt.show()
