@@ -1,0 +1,4 @@
+from sklearn.metrics import silhouette_score
+
+sil_score = silhouette_score(X, df['cluster'])
+print("Silhouette Score:", sil_score)
