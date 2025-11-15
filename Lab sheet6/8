@@ -1,0 +1,7 @@
+plt.figure(figsize=(7,5))
+plt.scatter(y_test, res_poly)
+plt.axhline(0, color='red')
+plt.xlabel("Actual Values")
+plt.ylabel("Residuals")
+plt.title("Residual Plot – Polynomial Ridge Regression")
+plt.show()
