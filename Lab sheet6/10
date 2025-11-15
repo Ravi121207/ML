@@ -1,0 +1,3 @@
+scores = cross_val_score(poly_ridge_model, X, y, cv=5)
+print("Cross-Validation R² Scores:", scores)
+print("Mean CV R²:", scores.mean())
