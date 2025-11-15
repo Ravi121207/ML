@@ -1,0 +1,2 @@
+multi_model = LinearRegression()
+multi_model.fit(X_train, y_train)
