@@ -1,0 +1,4 @@
+from sklearn.metrics import mean_absolute_error
+
+mae_lin = mean_absolute_error(y_test, y_pred_lin)
+mae_poly = mean_absolute_error(y_test, y_pred_poly)
