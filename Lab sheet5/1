@@ -1,0 +1,28 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_boston
+
+# Load dataset
+boston = load_boston()
+df = pd.DataFrame(boston.data, columns=boston.feature_names)
+df["PRICE"] = boston.target
+
+# Display the first few rows
+print(df.head())
+
+# Basic summary statistics
+print(df.describe())
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Pairplot (optional, heavy)
+# sns.pairplot(df)
+
+# Correlation heatmap
+plt.figure(figsize=(10, 8))
+sns.heatmap(df.corr(), annot=False, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
