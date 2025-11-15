@@ -1,0 +1,12 @@
+from sklearn.model_selection import KFold, cross_val_score
+
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+
+# R2 Scores
+cv_r2 = cross_val_score(poly_ridge_model, X, y, cv=kfold, scoring='r2')
+
+# MSE Scores (negative MSE is returned)
+cv_mse = -cross_val_score(poly_ridge_model, X, y, cv=kfold, scoring='neg_mean_squared_error')
+
+print("Average R² :", cv_r2.mean())
+print("Average MSE:", cv_mse.mean())
